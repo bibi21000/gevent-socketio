@@ -27,7 +27,12 @@ setup(
     license="BSD",
     url="https://github.com/abourget/gevent-socketio",
     download_url="https://github.com/abourget/gevent-socketio",
-    install_requires=("gevent", "gevent-websocket",),
+    #install_requires=("gevent", "gevent-websocket",),
+    install_requires=[
+        'gevent',
+        'gevent-socketio',
+    ],
+
     setup_requires=('versiontools >= 1.7'),
     cmdclass = {'test': PyTest},
     tests_require=['pytest', 'mock'],
