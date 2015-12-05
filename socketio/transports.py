@@ -1,4 +1,5 @@
 import gevent
+import json
 import urllib
 import urlparse
 try:
@@ -188,7 +189,7 @@ class JSONPolling(XHRPollingTransport):
             else:
                 i = "0"
             # TODO: don't we need to quote this data in here ?
-            super(JSONPolling, self).write("io.j[%s]('%s');" % (i, data))
+            super(JSONPolling, self).write("io.j[%s](%s);" % (i, json.dumps(data)))
 
 
 class XHRMultipartTransport(XHRPollingTransport):
