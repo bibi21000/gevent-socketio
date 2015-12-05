@@ -215,7 +215,7 @@ class SocketIOHandler(WSGIHandler):
             ('Connection', 'close'),
             ('Content-Length', 0)
         ])
-
+        self.write(None)
 
     def handle_disconnect_request(self):
         self.close_connection = True
@@ -224,3 +224,4 @@ class SocketIOHandler(WSGIHandler):
             ('Connection', 'close'),
             ('Content-Length', 0)
         ])
+        self.write(None)
